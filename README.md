@@ -3,7 +3,9 @@ Irei popular esse repositório com as tasks realizadas durante a pós-graduaçã
 
 ## Deep Learning
 
-Na disciplina de Deep Learning, comecarei com uma task que utilizei a base CIFAR-10 (https://www.cs.toronto.edu/~kriz/cifar.html). Esse dataset é uma coleção de 60.000 imagens coloridas de 32x32 pixels, divididas em 10 classes diferentes, com 6.000 imagens por classe. Essas classes incluem aviões, automóveis, pássaros, gatos, veados, cães, sapos, cavalos, navios e caminhões, e são mutuamente exclusivas.
+Para disciplina de Deep Learning, todos os detalhes sobre o algoritmo utilizado (funções de ativação, otimizadores, etc) estão contidos no Colab. Reservarei esse espaço para algumas discussões gerais sobre a escolha das arquiteturas dos modelos. 
+
+Começarei com uma task na qual apliquei uma CNN (Convolutional Neural Network) para classificar imagens da base CIFAR-10 (https://www.cs.toronto.edu/~kriz/cifar.html). Esse dataset é uma coleção de 60.000 imagens coloridas de 32x32 pixels, divididas em 10 classes diferentes, com 6.000 imagens por classe. Essas classes incluem aviões, automóveis, pássaros, gatos, veados, cães, sapos, cavalos, navios e caminhões, e são mutuamente exclusivas.
 
 Essa base é mais desafiadora que outras de classificação de imagens, como a Fashion MNIST (https://github.com/zalandoresearch/fashion-mnist), por exemplo, a qual traz um conjunto de imagens em escala de cinza. 
 
@@ -23,11 +25,11 @@ O gráfico que relaciona a curva de loss (perda de treinamento) com a curva de v
 
 Portanto, quando a perda de treinamento e a perda de validação não se aproximam, isso mostra que o modelo não está bem ajustado aos dados de treinamento e, consequentemente, não tem um bom desempenho em dados não vistos. Outro indicativo de overfitting no modelo é que a acurácia no treinamento chega a 98%, enquanto na validação chega apenas em 77%.
 
-Ao final, essa foi a matriz de confusão obtida com a arquitetura proposta. 
+Ao final, essa foi a matriz de confusão obtida com a arquitetura proposta, com uma acurácia de 63%.
 
 ![image](https://github.com/leticiacanton/Tasks-Pos-Graduacao-em-Data-Science/assets/38925042/8b5979b5-aaee-41d0-a61f-7b057f122f6d)
 
-
+Todavia o overfitting é uma preocupação, mesmo que a acurácia nos dados de teste tenha sido boa. Sendo assim, o recomendado seria aprimorar o modelo, para tentar melhorar sua capacidade de generalização e reduzir o impacto do overfitting.
 
 
 
