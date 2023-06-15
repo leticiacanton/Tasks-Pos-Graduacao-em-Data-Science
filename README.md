@@ -29,8 +29,25 @@ Ao final, essa foi a matriz de confusão obtida com a arquitetura proposta, com 
 
 ![image](https://github.com/leticiacanton/Tasks-Pos-Graduacao-em-Data-Science/assets/38925042/8b5979b5-aaee-41d0-a61f-7b057f122f6d)
 
-Todavia o overfitting é uma preocupação, mesmo que a acurácia nos dados de teste tenha sido boa. Sendo assim, o recomendado seria aprimorar o modelo, para tentar melhorar sua capacidade de generalização e reduzir o impacto do overfitting.
+Todavia, o overfitting é uma preocupação, mesmo que a acurácia nos dados de teste tenha sido ok. Sendo assim, o recomendado seria aprimorar o modelo, para tentar melhorar sua capacidade de generalização e reduzir o impacto do overfitting.
 
+### Segunda arquitetura - adicionando uma camada de Dropout
+
+Nessa arquitetura, usei de uma estratégia de regularização chamada Dropout. Nela, basicamente neurônios randômicamente selecionados são descartados durante o treinamento. No Keras há a classe Dropout que recebe como parâmetro o percentual de neurônios a serem descartados (0 - 1). Essa camada normalmente é disposta após a polling layer e elimina neurônios do feature map. Também pode ser incluída após uma camada dense. 
+
+Sendo assim, mantive a arquitetura anterior e adicionei 25% de dropout na três primeiras camadas e 50% na última. 
+
+![image](https://github.com/leticiacanton/Tasks-Pos-Graduacao-em-Data-Science/assets/38925042/9b62f8c2-c74c-4882-8453-b07487f600f6)
+
+O plot das curvas de perda de treinamento e de perda de validação evidenciou que a adição do dropout à CNN eliminou o problema que estavamos tendo com overfitting. Isto porque a medida que as épocas aumentam e mais dados são fornecidos para o modelo treinar, a distância entre as curvas diminuem.
+
+Como a curva de perda de treinamento mede a capacidade do modelo se ajustar aos dados de treinamento e a perda de validação mede a capacidade do modelo de se adaptar a novos dados, diminuir a distância entre essas duas curvas indica que o modelo se ajusta bem tanto aos dados de treinamento quanto a dados não vistos.
+
+Foi obtido uma acurácia de 55% na classificação. O que é performance razoável devido à complexidade do dataset, embora o modelo ainda cometa muitos erros de classificação. 
+
+![image](https://github.com/leticiacanton/Tasks-Pos-Graduacao-em-Data-Science/assets/38925042/3ff59443-f304-46aa-b8dc-c29640579721)
+
+Dado que o problema de overfitting foi resolvido, indicando que o modelo está bem estruturado, a melhora da acurácia no teste poderia ocorrer utilizando modelos já treinados com mais imagens (VGG16, por exemplo), utilizando o transfer learning. E, ainda, tunar os hiperparâmetros desse novo modelo, permitindo com que algumas camadas iniciais da rede sejam novamente treinadas.
 
 
 
